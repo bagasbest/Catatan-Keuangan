@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1024307479092",
+    "project_id": "catatan-keuangan-1abae",
+    "storage_bucket": "catatan-keuangan-1abae.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1024307479092:android:f18a200b2c99513010c061",
+        "android_client_info": {
+          "package_name": "com.capstone.catatankeuangan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1024307479092-jmleeu4j60ir5ghben3u825d6s2m88vm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAq-hJa-KZocUEr6S0qjEKfKxelGXFP0qw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1024307479092-jmleeu4j60ir5ghben3u825d6s2m88vm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
