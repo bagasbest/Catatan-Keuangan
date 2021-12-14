@@ -1,14 +1,15 @@
-import 'package:catatan_keuangan/screens/auth/register_screen.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
-class LoginScreen extends StatefulWidget {
+class RegisterScreen extends StatefulWidget {
+  const RegisterScreen({Key? key}) : super(key: key);
+
   @override
-  _LoginScreenState createState() => _LoginScreenState();
+  _RegisterScreenState createState() => _RegisterScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _RegisterScreenState extends State<RegisterScreen> {
+  var _nameController = TextEditingController();
   var _emailController = TextEditingController();
   var _passwordController = TextEditingController();
   var _passwordVisible = true;
@@ -36,7 +37,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Masuk',
+                    'Pendaftaran',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 45,
@@ -44,6 +45,43 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   SizedBox(
                     height: 16,
+                  ),
+                  Text(
+                    'Nama Lengkap',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+
+                  /// KOLOM NAMA LENGKAP
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 30, vertical: 1),
+                    decoration: BoxDecoration(
+                      color: Colors.grey[200],
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    child: TextFormField(
+                      controller: _nameController,
+                      keyboardType: TextInputType.text,
+                      autovalidateMode: AutovalidateMode.onUserInteraction,
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                      ),
+                      validator: (value) {
+                        if (value!.isEmpty) {
+                          return 'Nama Lengkap tidak boleh kosong';
+                        } else {
+                          return null;
+                        }
+                      },
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20,
                   ),
                   Text(
                     'Email',
@@ -131,32 +169,6 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   SizedBox(
-                    height: 10,
-                  ),
-                  Align(
-                    alignment: Alignment.centerRight,
-                    child: Text(
-                      'Lupa Sandi',
-                      style: TextStyle(
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Text(
-                    'Atau Masuk dengan?',
-                    style: TextStyle(
-                      color: Colors.white,
-                    ),
-                  ),
-                  Image.asset(
-                    "assets/images/google_icon.png",
-                    width: 40,
-                    height: 40,
-                  ),
-                  SizedBox(
                     height: 16,
                   ),
                   /// LOADING INDIKATOR
@@ -169,48 +181,26 @@ class _LoginScreenState extends State<LoginScreen> {
                   SizedBox(
                     height: 16,
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Container(
-                        width: 140,
-                        height: 45,
-                        child: RaisedButton(
-                          onPressed: () {},
-                          color: Colors.orange,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12),
-                          ),
-                          child: Text(
-                            'Masuk',
-                            style: TextStyle(
-                              fontSize: 18,
-                            ),
+                  Center(
+                    child: Container(
+                      width: 170,
+                      height: 45,
+                      child: RaisedButton(
+                        onPressed: () {
+
+                        },
+                        color: Colors.orange,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: Text(
+                          'Pendaftaran',
+                          style: TextStyle(
+                            fontSize: 18,
                           ),
                         ),
                       ),
-                      Container(
-                        width: 150,
-                        height: 45,
-                        child: RaisedButton(
-                          onPressed: () {
-                            Route route = MaterialPageRoute(
-                                builder: (context) => RegisterScreen());
-                            Navigator.push(context, route);
-                          },
-                          color: Colors.orange,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12),
-                          ),
-                          child: Text(
-                            'Pendaftaran',
-                            style: TextStyle(
-                              fontSize: 18,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
+                    ),
                   ),
                 ],
               ),
