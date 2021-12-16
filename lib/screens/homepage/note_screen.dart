@@ -22,7 +22,7 @@ class _NoteScreenState extends State<NoteScreen> {
       body: Stack(
         children: [
           Container(
-            color: Colors.black54,
+            color:  Color(0xff383838),
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,

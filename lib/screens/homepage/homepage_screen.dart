@@ -21,7 +21,7 @@ class _HomepageScreenState extends State<HomepageScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[600],
+      backgroundColor:  Color(0xff383838),
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.only(
           bottom: 30,
@@ -39,7 +39,7 @@ class _HomepageScreenState extends State<HomepageScreen> {
                     Icons.home,
                     color: Colors.black54,
                   ),
-                  label: "Home",
+                  label: "Beranda",
                 ),
                 BottomNavigationBarItem(
                   icon: Icon(
@@ -60,6 +60,7 @@ class _HomepageScreenState extends State<HomepageScreen> {
                 fontWeight: FontWeight.bold,
               ),
               selectedItemColor: Colors.black,
+              selectedFontSize: 18,
               onTap: (index) {
                 setState(() {
                   _currentIndex = index;

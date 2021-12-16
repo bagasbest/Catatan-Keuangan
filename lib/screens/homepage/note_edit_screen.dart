@@ -1,6 +1,7 @@
 import 'package:catatan_keuangan/database/crud_database.dart';
 import 'package:catatan_keuangan/screens/auth/login_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_masked_text2/flutter_masked_text2.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:intl/intl.dart';
 
@@ -96,7 +97,7 @@ class _NoteEditScreenState extends State<NoteEditScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[600],
+      backgroundColor:  Color(0xff383838),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -160,14 +161,14 @@ class _NoteEditScreenState extends State<NoteEditScreen> {
                         height: 40,
                         margin: EdgeInsets.all(3),
                         color:
-                            (_incomeClicked) ? Colors.orange : Colors.grey[600],
+                            (_incomeClicked) ? Colors.orange :  Color(0xff383838),
                         child: Text(
                           'Pemasukan',
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontSize: 18,
                             color: (_incomeClicked)
-                                ? Colors.grey[600]
+                                ?  Color(0xff383838)
                                 : Colors.orange,
                           ),
                         ),
@@ -185,7 +186,7 @@ class _NoteEditScreenState extends State<NoteEditScreen> {
                         height: 40,
                         margin: EdgeInsets.all(3),
                         color:
-                            (_incomeClicked) ? Colors.grey[600] : Colors.orange,
+                            (_incomeClicked) ?  Color(0xff383838) : Colors.orange,
                         child: Text(
                           'Pengeluaran',
                           textAlign: TextAlign.center,
@@ -193,7 +194,7 @@ class _NoteEditScreenState extends State<NoteEditScreen> {
                             fontSize: 18,
                             color: (_incomeClicked)
                                 ? Colors.orange
-                                : Colors.grey[600],
+                                :  Color(0xff383838),
                           ),
                         ),
                       ),

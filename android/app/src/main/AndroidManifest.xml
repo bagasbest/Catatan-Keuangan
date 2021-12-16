@@ -1,6 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.capstone.catatankeuangan">
-   <application
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+
+    <application
         android:label="Catatan Keuangan"
         android:icon="@mipmap/ic_launcher">
         <activity

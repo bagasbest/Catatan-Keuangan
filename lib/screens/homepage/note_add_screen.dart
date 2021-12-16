@@ -2,6 +2,7 @@ import 'package:catatan_keuangan/database/crud_database.dart';
 import 'package:catatan_keuangan/screens/auth/login_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_masked_text2/flutter_masked_text2.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:intl/intl.dart';
 
@@ -55,10 +56,21 @@ class _NoteAddScreenState extends State<NoteAddScreen> {
 
   Future<Null> _selectDueDate(BuildContext context) async {
     final picked = await showDatePicker(
-        context: context,
-        initialDate: _dueDate,
-        firstDate: DateTime(2021),
-        lastDate: DateTime(2025));
+      context: context,
+      initialDate: _dueDate,
+      firstDate: DateTime(2021),
+      lastDate: DateTime(2025),
+      builder: (BuildContext context, Widget? child) {
+        return Theme(
+          data: ThemeData.light().copyWith(
+            colorScheme: ColorScheme.light().copyWith(
+              primary: Colors.orange,
+            ),
+          ),
+          child: child!,
+        );
+      },
+    );
 
     if (picked != null) {
       setState(() {
@@ -73,7 +85,7 @@ class _NoteAddScreenState extends State<NoteAddScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[600],
+      backgroundColor: Color(0xff383838),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -137,15 +149,16 @@ class _NoteAddScreenState extends State<NoteAddScreen> {
                         width: 119,
                         height: 40,
                         margin: EdgeInsets.all(3),
-                        color:
-                            (_incomeClicked) ? Colors.orange : Colors.grey[600],
+                        color: (_incomeClicked)
+                            ? Colors.orange
+                            : Color(0xff383838),
                         child: Text(
                           'Pemasukan',
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontSize: 18,
                             color: (_incomeClicked)
-                                ? Colors.grey[600]
+                                ? Color(0xff383838)
                                 : Colors.orange,
                           ),
                         ),
@@ -162,8 +175,9 @@ class _NoteAddScreenState extends State<NoteAddScreen> {
                         width: 119,
                         height: 40,
                         margin: EdgeInsets.all(3),
-                        color:
-                            (_incomeClicked) ? Colors.grey[600] : Colors.orange,
+                        color: (_incomeClicked)
+                            ? Color(0xff383838)
+                            : Colors.orange,
                         child: Text(
                           'Pengeluaran',
                           textAlign: TextAlign.center,
@@ -171,7 +185,7 @@ class _NoteAddScreenState extends State<NoteAddScreen> {
                             fontSize: 18,
                             color: (_incomeClicked)
                                 ? Colors.orange
-                                : Colors.grey[600],
+                                : Color(0xff383838),
                           ),
                         ),
                       ),
@@ -254,7 +268,9 @@ class _NoteAddScreenState extends State<NoteAddScreen> {
                         color: Colors.white,
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.only(left: 16,),
+                        padding: const EdgeInsets.only(
+                          left: 16,
+                        ),
                         child: DropdownButton(
                           hint: Text(
                             'Pilih Kategori',
