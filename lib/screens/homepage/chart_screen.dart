@@ -235,6 +235,9 @@ class _ChartScreenState extends State<ChartScreen> {
 
                 Container(
                   height: 300,
+                  margin: EdgeInsets.only(
+                    left: 16,
+                  ),
                   child: charts.BarChart(
                     _createSampleData(
                       CRUD.jan,

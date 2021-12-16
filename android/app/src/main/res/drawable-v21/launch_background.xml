@@ -9,7 +9,7 @@
             android:gravity="center"
             android:src="@mipmap/launch_image" />
     </item> -->
-    <item
-        android:drawable="@drawable/splashscreen"
-        android:gravity="center" />
+<!--    <item-->
+<!--        android:drawable="@drawable/splashscreen"-->
+<!--        android:gravity="center" />-->
 </layer-list>
